@@ -1,0 +1,41 @@
+<template>
+    <lightning-card
+        title="RecordViewFormDynamicContact"
+        icon-name="standard:contact"
+    >
+    <lightning-layout>
+    <lightning-layout-item>
+        <!-- <div class="slds-var-m-around_medium">  -->
+            <!-- <span class="content-value" style="float: right; margin:0 20px 0 0"> -->
+            <lightning-record-view-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+            >
+            <!-- <span class="content-title" style="margin: 0 20px"> -->
+            <lightning-output-field
+               field-name="AccountId"
+                ></lightning-output-field>
+                <lightning-output-field
+                    field-name="Name">
+                </lightning-output-field>
+                <lightning-output-field
+                    field-name="Title"
+                ></lightning-output-field>
+                <lightning-output-field
+                    field-name="Phone"
+                ></lightning-output-field>
+                <lightning-output-field
+                    field-name="Email"
+                ></lightning-output-field>
+            </lightning-record-view-form>
+        
+        <!-- </span> -->
+        <!-- </div> -->
+    </lightning-layout-item>
+    </lightning-layout>
+        <!-- <c-view-source source="lwc/recordViewFormDynamicContact" slot="footer">
+            Create a read-only form for a specific record. This recipe uses a
+            dynamic schema definition (fields are specified as string).
+        </c-view-source> -->
+    </lightning-card>
+</template>

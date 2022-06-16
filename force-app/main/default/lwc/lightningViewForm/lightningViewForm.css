@@ -1,0 +1,32 @@
+.content-title{
+
+width: 33px;
+height: 16px;
+font-family: salesforceSans;
+font-size: 12px;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.33;
+letter-spacing: 0.38px;
+color: var(--flat-grey-5);
+}
+.content-value{
+
+
+    width: 33px;
+    height: 16px;
+    font-family: salesforceSans;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 0.38px;
+    color: var(--flat-blue-2);
+    
+
+
+
+
+}

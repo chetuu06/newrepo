@@ -1,0 +1,27 @@
+<template>
+    <div>
+        <lightning-card title="Fetch Fields" size="12">
+            <lightning-combobox
+            name="obj"
+            label="Select Object"
+            value={selectedValue}
+            placeholder="Select Progress"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+        </lightning-card>
+    </div>
+    <template if:true={selectedValue}>
+    <lightning-card size="12">
+        <lightning-dual-listbox   class="slds-m-around_small" name="Fields" label="Select Fields"
+        source-label="Available" selected-label="Selected" field-level-help="Select your preferred Fields"
+         options={selectFields} value={fieldsValue} onchange={handleSelectFields}>
+        </lightning-dual-listbox>
+        <div class="slds-float_right">
+         <lightning-button variant="success" label="Save" title="Successful action" onchange={handleSave}></lightning-button>
+        </div>
+    </lightning-card>
+    </template>
+
+
+
+</template>

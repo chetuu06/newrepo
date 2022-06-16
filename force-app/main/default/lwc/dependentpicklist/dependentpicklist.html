@@ -1,0 +1,91 @@
+<template>
+   
+    <lightning-card title="Real Time Custom Dependent Picklist From Record Field Values" icon-name="custom:custom63">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-combobox name="Type" label="Type" placeholder="Select Type" options={typeOptions}
+                    onchange={handleTypeChange} value={selectedTypeValue}></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-combobox name="Rating" label="Rating" placeholder="Select Rating" options={ratingOptions}
+                    onchange={handleRatingChange} value={selectedRatingValue}></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-combobox name="Industry" label="Industry" placeholder="Select Industry"
+                    options={industryOptions} onchange={handleIndustryChange} value={selectedIndustryValue}>
+                </lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-radio-group name="TradioGroup"
+        label="rating"
+        options={options1}
+        value={selectedValue}
+        onchange={handleChange1}
+        type="radio">
+        <template  if:true={fieldVisible}>
+            <lightning-input-field field-name="Name">
+           </lightning-input-field>
+         </template>
+    </lightning-radio-group>
+    
+    </lightning-card>
+    
+        <div class="slds-theme_default">
+            <div class="slds-p-around_medium">
+                <lightning-progress-indicator type="path" current-step={selectedStep}>
+                    <lightning-progress-step label="Step1" onstepfocus={selectStep1} value="Step1">
+                    </lightning-progress-step>
+                    <lightning-progress-step label="Step4" onstepfocus={selectStep4} value="Step4">
+                    </lightning-progress-step>
+                </lightning-progress-indicator>
+        </div>
+        </div>
+        <div class="slds-m-vertical_medium">
+        <lightning-button label="Back" class="slds-m-left_x-small" onclick={handlePrev}></lightning-button>
+        <template if:false={isSelectStep4}>
+    
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <!-- Your lightning:inputField components here -->
+                       <lightning-input onchange={bindText} data-var="firstName" type="text" label="firstName" value={firstName}></lightning-input> 
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+            
+                 <lightning-input onchange={bindText} data-var="lastName" type="text" label="lastName" value={lastName}></lightning-input>         
+                </div>
+             </div>
+            
+            <lightning-button variant="brand" class="slds-m-left_x-small" label="Next" onclick={handleNext}></lightning-button>
+            </template>
+            <template if:true={isSelectStep4}>
+    
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <!-- Your lightning:inputField components here -->
+                           <lightning-input onchange={bindText} data-var="firstName" type="text" label="firstName" value={firstName}></lightning-input> 
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                
+                     <lightning-input onchange={bindText} data-var="lastName" type="text" label="lastName" value={lastName}></lightning-input>         
+                    </div>
+                 </div>
+                        <template if:false={isSelectStep4}>
+    
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <!-- Your lightning:inputField components here -->
+                       <lightning-input onchange={bindText} data-var="firstName" type="text" label="Namefirst" value={firstName}></lightning-input> 
+                </div>
+                </div>
+            
+            <lightning-button variant="brand" class="slds-m-left_x-small" label="Next" onclick={handleNext}></lightning-button>
+            </template>
+        
+                <lightning-button variant="brand" class="slds-m-left_x-small" label="Next" onclick={handleNext}></lightning-button>
+                </template>
+            
+            </div>
+</template>
